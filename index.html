@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spotify Clone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Spotify</h2>
+    <ul>
+      <li>Home</li>
+      <li>Search</li>
+      <li>Your Library</li>
+    </ul>
+    <p class="playlist-title">Playlists</p>
+    <ul>
+      <li>My Favorites</li>
+      <li>Workout Mix</li>
+      <li>Chill Hits</li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <div class="navbar">
+      <input type="text" id="searchInput" placeholder="Search music..." oninput="filterSongs()" />
+    </div>
+
+    <div class="content">
+      <h2>Trending Songs</h2>
+      <div class="songs" id="songList">
+        <div class="song" onclick="playSong('song1.mp3', 'Sample Song', 'Artist 1')">
+          <img src="./assets/sample img.jfif" />
+          <p>Sample Song</p>
+        </div>
+        <div class="song" onclick="playSong('song2.mp3', 'Another Song', 'Artist 2')">
+          <img src="./assets/sample 2.jfif" />
+          <p>Finding her</p>
+        </div>
+        <!-- Add more songs here -->
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <img src="./assets/sample 2.jfif" alt="Now Playing" />
+      <div>
+        <p id="nowPlaying">Finding her</p>
+        <small id="artistName">Kushagra</small>
+      </div>
+    </div>
+    <div class="footer-center">
+      <button onclick="prevSong()">⏮️</button>
+      <button onclick="togglePlayPause()">⏯️</button>
+      <button onclick="nextSong()">⏭️</button>
+    </div>
+  </div>
+
+  <audio id="audioPlayer" style="display: none;"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
